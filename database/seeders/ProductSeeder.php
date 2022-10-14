@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ProductSeeder extends Seeder
 {
@@ -15,6 +15,25 @@ class ProductSeeder extends Seeder
      */
     public function run()
     {
-        // Product::factory()->count(5)->create();
+        DB::table('products')->insert([
+            'name' => 'Футболка красная',
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'name' => 'Футболка синяя',
+            'category_id' => 1,
+        ]);
+        DB::table('products')->insert([
+            'name' => 'Толстовка',
+            'category_id' => 2,
+        ]);
+        DB::table('products')->insert([
+            'name' => 'Кроссовки белые',
+            'category_id' => 3,
+        ]);
+        DB::table('products')->insert([
+            'name' => 'Кроссовки черные',
+            'category_id' => 3,
+        ]);
     }
 }
